@@ -5,7 +5,7 @@ import styles from './Hero.module.css';
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <div className={styles.bg}></div>
+      <div className={styles.bg} style={{ backgroundImage: "url('/AlianzaDeOro/image.png')" }}></div>
       <div className={styles.overlay}></div>
       
       <div className={styles.container}>

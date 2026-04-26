@@ -1,0 +1,116 @@
+.section {
+  padding: 8rem 0;
+  background-color: #0a0a0a; /* Fondo ultra-oscuro como Suja Tanger */
+  overflow: hidden;
+}
+
+.title {
+  color: var(--accent-gold);
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 4rem;
+}
+
+.galleryContainer {
+  display: flex;
+  width: 95%;
+  height: 600px;
+  margin: 0 auto;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.galleryItem {
+  position: relative;
+  flex: 1; /* Todas empiezan igual */
+  overflow: hidden;
+  border-radius: 12px;
+  transition: flex 0.7s cubic-bezier(0.25, 1, 0.5, 1); /* Transición suave y elástica */
+  cursor: pointer;
+}
+
+.galleryItem:hover {
+  flex: 3.5; /* La imagen seleccionada se expande drásticamente */
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s ease;
+}
+
+.galleryItem:hover .image {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.galleryItem:hover .overlay {
+  opacity: 1;
+}
+
+.itemTitle {
+  color: white;
+  font-size: 1.5rem;
+  font-family: var(--font-serif);
+  margin: 0;
+  transform: translateY(20px);
+  transition: transform 0.5s ease;
+}
+
+.galleryItem:hover .itemTitle {
+  transform: translateY(0);
+}
+
+@media (max-width: 992px) {
+  .galleryContainer {
+    height: 450px;
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .galleryContainer {
+    flex-direction: column; /* En móvil las ponemos una debajo de otra */
+    height: auto;
+    gap: 0.5rem;
+  }
+  
+  .galleryItem {
+    height: 200px;
+    flex: none;
+    width: 100%;
+  }
+  
+  .galleryItem:hover {
+    flex: none;
+    height: 300px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+}

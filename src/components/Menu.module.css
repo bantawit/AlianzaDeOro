@@ -1,0 +1,199 @@
+.section {
+  padding: 100px 2rem 8rem;
+  background-color: #faf9f6;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.5em;
+  color: #c5a059;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 6vw, 4rem);
+  color: #1a1a1a;
+  margin-bottom: 3rem;
+  font-weight: 900;
+}
+
+/* NAVEGACIÓN CÁPSULA (STICKY) */
+.navWrapper {
+  position: sticky;
+  top: 100px;
+  z-index: 100;
+  padding: 1rem 0;
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que bajen a la siguiente línea */
+  gap: 0.6rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 40px; /* Un poco menos redondeado para que encaje mejor en dos filas */
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: 1px solid rgba(197, 160, 89, 0.1);
+}
+
+.navBtn {
+  background: transparent;
+  border: none;
+  padding: 0.6rem 1.2rem; /* Más compacto */
+  border-radius: 100px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem; /* Fuente un pelín más pequeña */
+  font-weight: 700;
+  color: #666;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+}
+
+.navBtn:hover {
+  color: #c5a059;
+}
+
+.navBtnActive {
+  background: #c5a059;
+  color: white;
+  border-color: #c5a059;
+  box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
+}
+
+/* GRID DE PLATOS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 0 40px 0 40px; /* Estilo Boutique */
+  border: 1px solid rgba(197, 160, 89, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  border-color: #c5a059;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.itemName {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  flex: 1;
+}
+
+.price {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #c5a059;
+  margin-left: 1.5rem;
+}
+
+.desc {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.allergenTag {
+  font-size: 0.65rem;
+  color: #c5a059;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.legalBox {
+  margin-top: 6rem;
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(197, 160, 89, 0.2);
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.legalText {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  color: #1a1a1a;
+  line-height: 1.8;
+  opacity: 0.7;
+  letter-spacing: 0.05em;
+}
+
+.legalText strong {
+  color: #c5a059;
+  font-weight: 800;
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .nav {
+    max-width: 95%;
+    padding: 0.8rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,110 @@
+.header {
+  padding: 8rem 0 4rem;
+  background-color: var(--bg-paper);
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.menuGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.sectionBlock {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  color: var(--accent-brown);
+  border-bottom: 2px solid var(--accent-gold);
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.itemList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.item {
+  border-bottom: 1px dashed rgba(197, 160, 89, 0.3);
+  padding-bottom: 1rem;
+}
+
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.itemHeader h3 {
+  font-size: 1.2rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.price {
+  font-weight: 600;
+  color: var(--accent-gold);
+  font-size: 1.1rem;
+}
+
+.item p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.ctaSection {
+  background-color: var(--accent-brown);
+  color: white;
+  padding: var(--section-padding);
+}
+
+.ctaSection h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.ctaSection p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 992px) {
+  .menuGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 6rem 0 3rem;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .ctaSection h2 {
+    font-size: 2rem;
+  }
+}

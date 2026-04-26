@@ -1,0 +1,155 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/image.png');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05); /* Efecto ligero de zoom */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8rem 2rem 4rem; /* Añadido espacio arriba para el cabezal */
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+
+.glassBox {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  padding: 3rem 4rem; /* Reducido padding interno */
+  border: 1px solid #c5a059;
+  color: white;
+  text-align: center;
+  max-width: 750px; /* Un poco más estrecha */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border-radius: 40px; /* Esquinas redondeadas para coherencia con el cabezal */
+}
+
+.badge {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem; /* Más pequeña */
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  color: #c5a059;
+  margin-bottom: 1.5rem;
+  display: block;
+  font-weight: 700;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem); /* Reducido tamaño */
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+.description {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem; /* Más legible y compacta */
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  opacity: 0.8;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btnGold {
+  background: #c5a059;
+  color: white;
+  padding: 1rem 3rem; /* Más compacto */
+  text-decoration: none;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  display: inline-block;
+  transition: all 0.4s ease;
+  border: 1px solid #c5a059;
+  margin-bottom: 2.5rem;
+  border-radius: 100px;
+}
+
+.btnGold:hover {
+  background: transparent;
+  color: #c5a059;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
+}
+
+/* INFO INTEGRADA */
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(197, 160, 89, 0.3);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.infoItem {
+  text-align: center;
+}
+
+.infoLabel {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  color: #c5a059;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.infoValue {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  display: block;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .glassBox {
+    padding: 3rem 2rem;
+  }
+  .infoGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+}

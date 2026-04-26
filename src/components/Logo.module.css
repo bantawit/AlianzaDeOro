@@ -1,0 +1,31 @@
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: fit-content;
+}
+
+.logoImage {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  /* Mantenemos la luminosidad agresiva solicitada */
+  filter: brightness(2) contrast(1.1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+
+.light .logoImage {
+  filter: brightness(2.5) contrast(1.2) drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+}
+
+.logoWrapper:hover .logoImage {
+  transform: scale(1.08);
+  filter: brightness(2.8) drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+}
+
+@media (max-width: 768px) {
+  .logoImage {
+    height: 45px;
+  }
+}

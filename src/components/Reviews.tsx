@@ -16,7 +16,7 @@ export default function Reviews() {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [currentX, setCurrentX] = useState(0);
-  const requestRef = useRef<number>();
+  const requestRef = useRef<number | null>(null);
   
   // Duplicamos las reviews para el efecto infinito
   const displayReviews = [...reviews, ...reviews, ...reviews, ...reviews];

@@ -1,89 +1,244 @@
 .section {
-  background-color: var(--bg-paper);
-  padding: 8rem 0;
+  padding: 8rem 2rem;
+  background-color: #faf9f6;
+  position: relative;
+  overflow: hidden;
 }
 
 .container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  gap: 6rem;
   align-items: center;
 }
 
-.imageBox {
+/* DISEÑO CREATIVO DE IMAGEN */
+.imageWrapper {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.imagePlaceholder {
-  aspect-ratio: 1;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Roscon_de_Reyes.jpg/1280px-Roscon_de_Reyes.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  box-shadow: 0 30px 60px rgba(74, 55, 40, 0.2);
-}
-
-.productTag {
+.imageDecor {
   position: absolute;
-  top: -20px;
-  right: -20px;
-  background-color: var(--accent-burgundy);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(197, 160, 89, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.mainImageContainer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 500px;
+}
+
+.mainImage {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 20px 50px rgba(0,0,0,0.15));
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.imageWrapper:hover .mainImage {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.floatingBadge {
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  background: #800020;
   color: white;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  font-weight: 700;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(128, 0, 32, 0.3);
+  animation: float 4s ease-in-out infinite;
+  z-index: 5;
+}
+
+.badgeTop {
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: 0.8rem;
-  z-index: 2;
-  box-shadow: 0 10px 20px rgba(128, 0, 32, 0.3);
+  opacity: 0.8;
 }
 
-.content h2 {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-}
-
-.content p {
+.badgeBottom {
   font-size: 1.1rem;
-  color: var(--text-muted);
-  margin-bottom: 2rem;
-  line-height: 1.8;
+  font-weight: 900;
+  letter-spacing: 0.05em;
 }
 
-.list {
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* CONTENIDO */
+.headerBox {
   margin-bottom: 2.5rem;
 }
 
-.list li {
-  margin-bottom: 0.8rem;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  font-weight: 600;
-  color: var(--accent-brown);
+.accent {
+  color: #c5a059;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 1rem;
 }
 
-.list li::before {
-  content: '✓';
-  color: var(--accent-gold);
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: #1a1a1a;
+  line-height: 1.1;
   font-weight: 900;
 }
 
+.title span {
+  color: #c5a059;
+  font-style: italic;
+}
+
+.description {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #6b5e55;
+  margin-bottom: 3rem;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.featureItem {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+  border: 1px solid rgba(197, 160, 89, 0.1);
+  transition: all 0.3s ease;
+}
+
+.featureItem:hover {
+  transform: translateY(-5px);
+  border-color: #c5a059;
+}
+
+.featureIcon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.featureItem p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: #1a1a1a;
+  color: white;
+  padding: 1.2rem 2.5rem;
+  border-radius: 100px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.ctaBtn:hover {
+  background: #c5a059;
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(197, 160, 89, 0.3);
+}
+
+.ctaArrow {
+  transition: transform 0.3s ease;
+}
+
+.ctaBtn:hover .ctaArrow {
+  transform: translateX(5px);
+}
+
+/* RESPONSIVE */
 @media (max-width: 992px) {
   .container {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 5rem;
     text-align: center;
   }
-  
-  .list {
-    display: inline-block;
-    text-align: left;
+
+  .imageWrapper {
+    order: -1; /* Imagen arriba */
   }
-  
-  .imageBox {
+
+  .featuresGrid {
     max-width: 500px;
-    margin: 0 auto;
+    margin: 0 auto 3rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 6rem 1.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .featuresGrid {
+    gap: 0.8rem;
+  }
+
+  .featureItem {
+    padding: 1rem 0.5rem;
+  }
+
+  .featureItem p {
+    font-size: 0.65rem;
+  }
+
+  .floatingBadge {
+    width: 80px;
+    height: 80px;
+    right: 0;
+  }
+
+  .badgeBottom {
+    font-size: 0.9rem;
   }
 }

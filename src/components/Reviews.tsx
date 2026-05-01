@@ -40,7 +40,7 @@ export default function Reviews() {
     return () => {
       if (requestRef.current) cancelAnimationFrame(requestRef.current);
     };
-  }, [isDragging]);
+  }, [isDragging]); // isDragging remains as dependency, but we fix the quotes below
 
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
@@ -57,6 +57,21 @@ export default function Reviews() {
     setIsDragging(false);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX - currentX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+    const x = e.touches[0].pageX - startX;
+    setCurrentX(x);
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+
   return (
     <section className={styles.section}>
       <div className="container text-center">
@@ -70,6 +85,9 @@ export default function Reviews() {
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         ref={containerRef}
       >
         <div 
@@ -87,7 +105,7 @@ export default function Reviews() {
                   <span key={i} className={i < review.rating ? styles.starFull : styles.starEmpty}>★</span>
                 ))}
               </div>
-              <p className={styles.text}>"{review.text}"</p>
+              <p className={styles.text}>&quot;{review.text}&quot;</p>
               <div className={styles.footer}>
                 <div className={styles.avatar}>{review.name.charAt(0)}</div>
                 <div>

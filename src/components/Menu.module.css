@@ -1,199 +1,344 @@
 .section {
-  padding: 100px 2rem 8rem;
+  padding: 120px 0 8rem; /* Quitamos padding lateral para que el scroll llegue al borde */
   background-color: #faf9f6;
   min-height: 100vh;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
+  padding: 0 2rem;
 }
 
 .subtitle {
   font-family: 'Outfit', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 800;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.4em;
   color: #c5a059;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   display: block;
 }
 
 .title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(3rem, 6vw, 4rem);
+  font-size: clamp(3rem, 7vw, 4.5rem);
   color: #1a1a1a;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   font-weight: 900;
+  letter-spacing: -0.02em;
 }
 
-/* NAVEGACIÓN CÁPSULA (STICKY) */
-.navWrapper {
-  position: sticky;
-  top: 100px;
-  z-index: 100;
-  padding: 1rem 0;
-  margin-bottom: 4rem;
+/* SEARCH BAR PREMIUM */
+.searchWrapper {
+  max-width: 600px;
+  margin: 0 auto 1rem;
+}
+
+.inputContainer {
+  position: relative;
   display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 1.2rem 4rem 1.2rem 2.5rem;
+  border-radius: 100px;
+  border: 1px solid rgba(197, 160, 89, 0.15);
+  background: white;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  color: #1a1a1a;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #c5a059;
+  box-shadow: 0 15px 45px rgba(197, 160, 89, 0.12);
+  transform: translateY(-2px);
+}
+
+.clearSearchBtn {
+  position: absolute;
+  right: 1.5rem;
+  width: 30px;
+  height: 30px;
+  background: #f5f5f0;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
 }
 
+.clearSearchBtn:hover {
+  background: #c5a059;
+  color: white;
+}
+
+/* CATEGORY NAVIGATION - MOBILE SCROLLABLE */
+.navWrapper {
+  position: sticky;
+  top: 80px; /* Ajustado para el nuevo navbar */
+  z-index: 100;
+  padding: 1rem 0;
+  margin-bottom: 5rem;
+  background: rgba(250, 249, 246, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+}
+
 .nav {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Permite que bajen a la siguiente línea */
-  gap: 0.6rem;
-  background: white;
-  padding: 1rem;
-  border-radius: 40px; /* Un poco menos redondeado para que encaje mejor en dos filas */
-  max-width: 1000px;
+  gap: 0.8rem;
+  max-width: 1200px;
   margin: 0 auto;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  border: 1px solid rgba(197, 160, 89, 0.1);
+  padding: 0.5rem 2rem;
+  overflow-x: auto; /* Scroll horizontal en móvil */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
 .navBtn {
-  background: transparent;
-  border: none;
-  padding: 0.6rem 1.2rem; /* Más compacto */
+  background: white;
+  border: 1px solid rgba(197, 160, 89, 0.1);
+  padding: 0.8rem 2rem; /* Más espacio lateral */
   border-radius: 100px;
   font-family: 'Outfit', sans-serif;
-  font-size: 0.75rem; /* Fuente un pelín más pequeña */
+  font-size: 0.85rem;
   font-weight: 700;
   color: #666;
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid transparent;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px; /* Altura mínima para toque */
 }
 
 .navBtn:hover {
   color: #c5a059;
+  border-color: #c5a059;
+  transform: translateY(-2px);
 }
 
 .navBtnActive {
-  background: #c5a059;
-  color: white;
-  border-color: #c5a059;
-  box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
+  background: #c5a059 !important;
+  color: white !important;
+  border-color: #c5a059 !important;
+  box-shadow: 0 8px 25px rgba(197, 160, 89, 0.3);
 }
 
-/* GRID DE PLATOS */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2.5rem;
+/* CARDS PREMIUM */
+.resultsContainer {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.categoryGroup {
+  margin-bottom: 6rem;
+}
+
+.categoryTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #1a1a1a;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+}
+
+.categoryTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #c5a059;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 3rem;
 }
 
 .card {
   background: white;
   padding: 2.5rem;
-  border-radius: 0 40px 0 40px; /* Estilo Boutique */
-  border: 1px solid rgba(197, 160, 89, 0.1);
+  border-radius: 30px;
+  border: 1px solid rgba(197, 160, 89, 0.08);
   display: flex;
   flex-direction: column;
-  transition: all 0.4s ease;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
-  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-  border-color: #c5a059;
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(197, 160, 89, 0.12);
+  border-color: rgba(197, 160, 89, 0.4);
 }
 
 .cardHeader {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+  gap: 1rem;
 }
 
 .itemName {
   font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: #1a1a1a;
-  flex: 1;
+  line-height: 1.2;
 }
 
 .price {
   font-family: 'Outfit', sans-serif;
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #c5a059;
-  margin-left: 1.5rem;
+  background: rgba(197, 160, 89, 0.05);
+  padding: 0.4rem 1rem;
+  border-radius: 12px;
+  white-space: nowrap;
 }
 
 .desc {
   font-family: 'Outfit', sans-serif;
-  font-size: 0.95rem;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #6b5e55;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  opacity: 0.9;
 }
 
 .allergenTag {
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   color: #c5a059;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.1em;
   font-weight: 800;
+  background: #fff;
   border: 1px solid rgba(197, 160, 89, 0.2);
-  padding: 2px 8px;
-  border-radius: 4px;
+  padding: 6px 14px;
+  border-radius: 100px;
   margin-top: auto;
   align-self: flex-start;
+  transition: all 0.3s ease;
 }
 
+.card:hover .allergenTag {
+  background: #c5a059;
+  color: white;
+  border-color: #c5a059;
+}
+
+/* FOOTER DEL MENÚ */
 .legalBox {
   margin-top: 6rem;
-  padding: 3rem 2rem;
-  border-top: 1px solid rgba(197, 160, 89, 0.2);
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 50px 50px 0 0;
   text-align: center;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  border-top: 1px solid rgba(197, 160, 89, 0.1);
 }
 
 .legalText {
   font-family: 'Outfit', sans-serif;
-  font-size: 0.85rem;
-  color: #1a1a1a;
-  line-height: 1.8;
-  opacity: 0.7;
-  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+  color: #4a3728;
+  line-height: 2;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.legalText strong {
-  color: #c5a059;
-  font-weight: 800;
-}
-
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
   }
 }
 
 @media (max-width: 768px) {
+  .section {
+    padding-top: 100px;
+  }
+
+  .navWrapper {
+    top: 70px;
+    padding: 0.8rem 0;
+  }
+
+  .nav {
+    padding: 0.5rem 1.5rem;
+    gap: 0.6rem;
+  }
+
+  .navBtn {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.8rem;
+  }
+
   .grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
-  .nav {
-    max-width: 95%;
-    padding: 0.8rem;
+
+  .title {
+    font-size: 3rem;
   }
-  
+
+  .resultsContainer {
+    padding: 0 1.5rem;
+  }
+
+  .card {
+    padding: 2rem;
+    border-radius: 24px;
+  }
+
+  .itemName {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 480px) {
   .title {
     font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+  }
+
+  .price {
+    font-size: 1.1rem;
+    padding: 0.3rem 0.8rem;
   }
 }

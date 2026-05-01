@@ -2,28 +2,57 @@ import styles from './Featured.module.css';
 
 export default function Featured() {
   return (
-    <section className={`section ${styles.section}`} id="encargos">
-      <div className={`container ${styles.container}`}>
-        <div className={`${styles.imageBox} reveal`}>
-          <div className={styles.productTag}>El Favorito</div>
-          <div className={styles.imagePlaceholder}>
-            {/* Aquí puedes poner una imagen del Roscón */}
+    <section className={styles.section} id="encargos">
+      <div className={styles.container}>
+        <div className={`${styles.imageWrapper} reveal`}>
+          <div className={styles.imageDecor}></div>
+          <div className={styles.mainImageContainer}>
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Roscon_de_Reyes.jpg/1280px-Roscon_de_Reyes.jpg" 
+              alt="Roscón Artesano Alianza de Oro" 
+              className={styles.mainImage}
+            />
+            <div className={styles.floatingBadge}>
+              <span className={styles.badgeTop}>Nuestra</span>
+              <span className={styles.badgeBottom}>JOYA</span>
+            </div>
           </div>
         </div>
         
         <div className={`${styles.content} reveal delay-2`}>
-          <span className="accent-text">Producto Destacado</span>
-          <h2>Nuestra Especialidad: El Roscón Artesano</h2>
-          <p>
-            No es solo para Navidad. Nuestro Roscón de Reyes es famoso en toda Fuenlabrada 
-            por su masa esponjosa, el aroma real de azahar y nuestra nata montada pura.
+          <div className={styles.headerBox}>
+            <span className={styles.accent}>Desde 1975</span>
+            <h2 className={styles.title}>
+              El Roscón que <br /> 
+              <span>enamoró</span> a Fuenlabrada
+            </h2>
+          </div>
+          
+          <p className={styles.description}>
+            No es solo para Navidad. Nuestro Roscón es famoso por su masa de larga fermentación, 
+            aroma natural de azahar y nuestra mítica nata montada pura. Una receta familiar 
+            que guardamos como nuestro mayor tesoro.
           </p>
-          <ul className={styles.list}>
-            <li>100% Mantequilla Natural</li>
-            <li>Sin conservantes ni colorantes</li>
-            <li>Receta familiar desde 1990</li>
-          </ul>
-          <a href="https://wa.me/34916450487" className="btn btn-primary">Reservar el tuyo</a>
+          
+          <div className={styles.featuresGrid}>
+            <div className={styles.featureItem}>
+              <span className={styles.featureIcon}>✨</span>
+              <p>Masa Madre Natural</p>
+            </div>
+            <div className={styles.featureItem}>
+              <span className={styles.featureIcon}>🥛</span>
+              <p>Nata 100% Pura</p>
+            </div>
+            <div className={styles.featureItem}>
+              <span className={styles.featureIcon}>🌿</span>
+              <p>Sin Aditivos</p>
+            </div>
+          </div>
+          
+          <a href="https://wa.me/34916450487" className={styles.ctaBtn}>
+            ENCARGAR AHORA
+            <span className={styles.ctaArrow}>→</span>
+          </a>
         </div>
       </div>
     </section>

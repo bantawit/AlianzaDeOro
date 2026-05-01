@@ -10,7 +10,7 @@ export default function Hero() {
       
       <div className={styles.container}>
         <div className={styles.glassBox}>
-          <span className={styles.badge}>Maestros Artesanos desde 1990</span>
+          <span className={styles.badge}>Maestros Artesanos desde 1975</span>
           
           <h1 className={styles.title}>
             La Excelencia de nuestra Cocina

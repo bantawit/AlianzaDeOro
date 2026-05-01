@@ -10,7 +10,7 @@ export default function Footer() {
         <div className={styles.brandCol}>
           <Logo variant="light" />
           <p>
-            Tradición y calidad artesana en el corazón de Fuenlabrada desde 1990. 
+            Tradición y calidad artesana en el corazón de Fuenlabrada desde 1975. 
             Somos una panadería, pastelería y restaurante familiar dedicados a 
             mantener vivo el sabor auténtico de lo hecho a mano, utilizando siempre 
             ingredientes naturales y el cariño de nuestro obrador.

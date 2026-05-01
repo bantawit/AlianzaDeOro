@@ -142,14 +142,57 @@
 }
 
 @media (max-width: 768px) {
-  .glassBox {
-    padding: 3rem 2rem;
+  .hero {
+    min-height: 100vh; /* Aseguramos pantalla completa */
+    padding-top: 60px; /* Espacio para el navbar fijo */
   }
+
+  .container {
+    padding: 2rem 1rem;
+    align-items: center;
+  }
+
+  .glassBox {
+    padding: 3rem 1.5rem;
+    width: 100%;
+    border-radius: 30px;
+  }
+
   .infoGrid {
     grid-template-columns: 1fr;
     gap: 2rem;
+    padding-top: 2rem;
+    margin-top: 2rem;
   }
+
   .title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .btnGold {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .badge {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+  }
+
+  .infoValue {
+    font-size: 0.85rem;
   }
 }

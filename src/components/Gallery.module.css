@@ -110,7 +110,29 @@
     height: 300px;
   }
   
+@media (max-width: 480px) {
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .galleryContainer {
+    gap: 0.25rem;
+    padding: 0 0.5rem;
+  }
+
+  .galleryItem {
+    height: 180px;
+  }
+
+  .galleryItem:hover {
+    height: 250px;
+  }
+
+  .itemTitle {
+    font-size: 1.2rem;
+  }
+
   .title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 }

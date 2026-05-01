@@ -5,32 +5,32 @@ const galleryImages = [
   {
     id: 1,
     title: 'Nuestras Creaciones',
-    image: '/AlianzaDeOro/iamgenes/WhatsApp Image 2026-04-26 at 18.53.00 (1).jpeg'
+    image: '/iamgenes/WhatsApp Image 2026-04-26 at 18.53.00 (1).jpeg'
   },
   {
     id: 2,
     title: 'El Obrador',
-    image: '/AlianzaDeOro/iamgenes/WhatsApp Image 2026-04-26 at 18.53.00 (3).jpeg'
+    image: '/iamgenes/WhatsApp Image 2026-04-26 at 18.53.00 (3).jpeg'
   },
   {
     id: 3,
     title: 'Momentos Alianza',
-    image: '/AlianzaDeOro/iamgenes/WhatsApp Image 2026-04-26 at 19.35.59 (5).jpeg'
+    image: '/iamgenes/WhatsApp Image 2026-04-26 at 19.35.59 (5).jpeg'
   },
   {
     id: 4,
     title: 'Pasión por la Cocina',
-    image: '/AlianzaDeOro/iamgenes/WhatsApp Image 2026-04-26 at 19.35.59 (7).jpeg'
+    image: '/iamgenes/WhatsApp Image 2026-04-26 at 19.35.59 (7).jpeg'
   },
   {
     id: 5,
     title: 'Calidad Artesana',
-    image: '/AlianzaDeOro/iamgenes/WhatsApp Image 2026-04-26 at 19.35.59 (8).jpeg'
+    image: '/iamgenes/WhatsApp Image 2026-04-26 at 19.35.59 (8).jpeg'
   },
   {
     id: 6,
     title: 'Sabor de Siempre',
-    image: '/AlianzaDeOro/iamgenes/WhatsApp Image 2026-04-26 at 19.36.00.jpeg'
+    image: '/iamgenes/WhatsApp Image 2026-04-26 at 19.36.00.jpeg'
   }
 ];
 

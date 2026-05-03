@@ -3,7 +3,7 @@ import styles from './WhatsAppFab.module.css';
 export default function WhatsAppFab() {
   return (
     <a 
-      href="https://wa.me/34916450487" 
+      href="https://wa.me/34665829352" 
       className={styles.fab}
       target="_blank"
       rel="noopener noreferrer"

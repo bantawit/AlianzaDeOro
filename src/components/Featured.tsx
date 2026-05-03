@@ -49,7 +49,7 @@ export default function Featured() {
             </div>
           </div>
           
-          <a href="https://wa.me/34916450487" className={styles.ctaBtn}>
+          <a href="https://wa.me/34665829352" className={styles.ctaBtn}>
             ENCARGAR AHORA
             <span className={styles.ctaArrow}>→</span>
           </a>

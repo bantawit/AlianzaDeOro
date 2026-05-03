@@ -70,7 +70,7 @@ export default function Encargos() {
               <div className={styles.whatsappCard}>
                 <h3>¿Prefieres WhatsApp?</h3>
                 <p>Si tienes una duda rápida o quieres enviarnos una foto de referencia para tu tarta.</p>
-                <a href="https://wa.me/34916450487" className="btn btn-outline" style={{ display: 'flex', gap: '0.5rem' }}>
+                <a href="https://wa.me/34665829352" className="btn btn-outline" style={{ display: 'flex', gap: '0.5rem' }}>
                   Escribir por WhatsApp
                 </a>
               </div>

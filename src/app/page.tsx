@@ -5,6 +5,7 @@ import Reviews from '@/components/Reviews';
 import Gallery from '@/components/Gallery';
 import Process from '@/components/Process';
 import Featured from '@/components/Featured';
+import DailySpecials from '@/components/DailySpecials';
 import Menu from '@/components/Menu';
 
 export default function Home() {
@@ -29,6 +30,11 @@ export default function Home() {
       {/* 4. PRODUCTO: Líneas de negocio concretas */}
       <div className="reveal">
         <Featured />
+      </div>
+
+      {/* 4.5 ESPECIALES: Menús del día */}
+      <div className="reveal">
+        <DailySpecials />
       </div>
 
       {/* 5. CONVERSIÓN: La Carta interactiva */}

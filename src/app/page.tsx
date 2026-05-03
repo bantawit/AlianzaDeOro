@@ -33,9 +33,7 @@ export default function Home() {
       </div>
 
       {/* 4.5 ESPECIALES: Menús del día */}
-      <div className="reveal">
-        <DailySpecials />
-      </div>
+      <DailySpecials />
 
       {/* 5. CONVERSIÓN: La Carta interactiva */}
       <div className="reveal">

@@ -46,7 +46,7 @@ export default function DailySpecials() {
     <>
       <section className={styles.section}>
         <div className="container">
-          <div className={styles.header}>
+          <div className={`${styles.header} reveal`}>
             <span className="accent-text">Nuestras Especialidades</span>
             <h2 className={styles.title}>Menús del Día</h2>
             <p className={styles.subtitle}>

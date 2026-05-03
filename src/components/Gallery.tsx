@@ -52,6 +52,10 @@ export default function Gallery() {
           </div>
         ))}
       </div>
+
+      <div className={styles.viewMoreContainer}>
+        <a href="/galeria" className="btn btn-outline">Ver galería completa</a>
+      </div>
     </section>
   );
 }
